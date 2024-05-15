@@ -2,7 +2,7 @@ package com.xiaoranya.chat;
 
 import java.io.Serializable;
 
-public class Message {
+public class Message implements Serializable {
 
     private  String from;
     private  int type;
@@ -37,4 +37,5 @@ public class Message {
     public void setInfo(String info) {
         this.info = info;
     }
+
 }

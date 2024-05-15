@@ -59,11 +59,14 @@ class UserThread implements Runnable {
                         int size = users.size();
                         for(int i = 0; i < size; i++) {
                             ut = users.get(i);
-                            ut.oOut.writeObject(message);
+                            if(ut != this){
+                                ut.oOut.writeObject(message);
+                            }
                         }
                         break;
                     case MessageType.TYPE_LOGIN :
                         name = message.getFrom();
+                        message.setInfo("欢迎您！");
                         oOut.writeObject(message);
                         break;
                 }
